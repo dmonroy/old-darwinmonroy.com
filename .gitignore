@@ -1,3 +1,6 @@
 .idea/
 deploy/
 .hyde_deps
+
+# Dev hard-links
+content/media/theme

@@ -16,6 +16,10 @@ python-dev:
 dev: python-dev frontend-dev
 
 run:
+	rm -rfv content/media/theme
+	ln -sv $(PWD)/theme/.tmp content/media/theme
+	rm -rvf theme/.tmp/bower_components
+	ln -sv $(PWD)/theme/bower_components theme/.tmp/
 	foreman start
 
 run-hyde:
@@ -27,7 +31,12 @@ run-grunt-watch:
 grunt-build:
 	cd $(THEME) && grunt build
 
-deploy: grunt-build
+build: grunt-build
+	rm -rfv content/media/theme
+	ln -sv $(PWD)/theme/dist/ content/media/theme
+	hyde gen
+
+deploy: build
 	# TODO: write the deploy task
 
 $(BIN)/npm:
