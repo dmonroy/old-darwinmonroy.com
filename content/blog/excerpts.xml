@@ -1,5 +1,5 @@
 ===
-title: BASIC blog excerpts feed
+title: The noise around Darwin Monroy
 extends: atom.j2
 excerpts_only: true
 listable: false
