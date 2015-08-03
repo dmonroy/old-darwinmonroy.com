@@ -17,7 +17,7 @@ dev: python-dev frontend-dev
 
 run:
 	rm -rfv content/media/theme
-	ln -sv $(PWD)/theme/.tmp content/media/theme
+	ln -sv $(PWD)/theme/.tmp/media/theme content/media/theme
 	rm -rvf theme/.tmp/bower_components
 	ln -sv $(PWD)/theme/bower_components theme/.tmp/
 	foreman start
@@ -33,7 +33,7 @@ grunt-build:
 
 build: grunt-build
 	rm -rfv content/media/theme
-	ln -sv $(PWD)/theme/dist/ content/media/theme
+	ln -sv $(PWD)/theme/dist/media/theme content/media/theme
 	hyde gen
 
 deploy: build
